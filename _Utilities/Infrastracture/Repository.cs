@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using Microsoft.IdentityModel.Tokens;
-using PostModule.Domain.Services;
+﻿using _Utilities.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PostModule.Infrastracture.EF.Repositpries
+namespace _Utilities.Infrastracture
 {
     public class Repository<TKey, T> : IRepository<TKey, T> where T : class
     {
@@ -32,7 +30,7 @@ namespace PostModule.Infrastracture.EF.Repositpries
             return Save();
         }
 
-        public bool Exist(Expression<Func<T, bool>> expression)=>
+        public bool Exist(Expression<Func<T, bool>> expression) =>
             _context.Set<T>().Any(expression);
 
 
@@ -52,9 +50,9 @@ namespace PostModule.Infrastracture.EF.Repositpries
 
         public T GetById(TKey id) =>
             _context.Find<T>(id);
-        
-        public bool Save()=>
-            _context.SaveChanges()>= 0?true:false;
-        
+
+        public bool Save() =>
+            _context.SaveChanges() >= 0 ? true : false;
+
     }
 }

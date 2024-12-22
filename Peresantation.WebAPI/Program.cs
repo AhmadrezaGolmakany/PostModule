@@ -2,18 +2,13 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Peresantation.WebAPI.Utility;
-using PostModule.Domain.Services;
-using PostModule.Infrastracture.EF;
-using PostModule.Infrastracture.EF.Repositpries;
 using PostModule.Query;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-var configuration = builder.Configuration;
-var local = configuration.GetConnectionString("Post");
-Post_Bootstrapper.Confiq(services,local);
+Post_Bootstrapper.Confiq(services, builder.Configuration.GetConnectionString("Post"));
 
 services.AddControllers();
 
@@ -44,6 +39,8 @@ services.AddVersionedApiExplorer(x =>
 });
 
 #endregion
+
+
 var app = builder.Build();
 
 

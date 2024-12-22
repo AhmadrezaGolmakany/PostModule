@@ -1,4 +1,5 @@
-﻿using PostModule.Application.Contract.CityApplication;
+﻿using _Utilities.Infrastracture;
+using PostModule.Application.Contract.CityApplication;
 using PostModule.Domain.CityEntity;
 using PostModule.Domain.Services;
 using System;

@@ -1,14 +1,13 @@
-﻿using PostModule.Domain.CityEntity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PostModule.Domain.Services
+namespace _Utilities.Domain
 {
-    public interface IRepository<TKey , T> where T : class
+    public interface IRepository<TKey, T> where T : class
     {
         IEnumerable<T> GetAll();
 

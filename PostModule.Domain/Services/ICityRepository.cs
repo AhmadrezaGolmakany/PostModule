@@ -1,4 +1,5 @@
-﻿using PostModule.Application.Contract.CityApplication;
+﻿using _Utilities.Domain;
+using PostModule.Application.Contract.CityApplication;
 using PostModule.Domain.CityEntity;
 using PostModule.Domain.StateEntity;
 using System;

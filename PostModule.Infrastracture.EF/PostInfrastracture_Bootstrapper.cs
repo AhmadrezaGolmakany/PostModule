@@ -16,6 +16,8 @@ namespace PostModule.Infrastracture.EF
         {
             services.AddTransient<IStateRepository, StateRepository>();
             services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IPostRepository, PostRepositories>();
+            services.AddTransient<IPostPriceRepository, PostPriceRepository>();
 
 
 

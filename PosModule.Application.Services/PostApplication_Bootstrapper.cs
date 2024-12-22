@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using PostModule.Application.Contract.CityApplication;
+using PostModule.Application.Contract.PostApplication;
+using PostModule.Application.Contract.PostPriceApplication;
 using PostModule.Application.Contract.StateApplication;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,8 @@ namespace PosModule.Application.Services
         {
             service.AddTransient<IStateApplication, StateApplication>();
             service.AddTransient<ICityApplication, CityApplication>();
+            service.AddTransient<IPostApplication, PostApplication>();
+            service.AddTransient<IPostPriceApplication, PostPriceApplication>();
         }
     }
 }
